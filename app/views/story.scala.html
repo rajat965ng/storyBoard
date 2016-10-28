@@ -1,0 +1,28 @@
+@import controllers.StoryModel.StoryData
+@(message:String,stories:List[StoryData])
+
+@main("Story Board"){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Story Page</title>
+</head>
+<body>
+  <h4>@message</h4>
+    <form action="@routes.StoryController.createStory" method="post">
+      <p>
+      <label>Title:</label><input type="text" name="title" />
+      </p>
+      <p>
+        <label>Description:</label><input type="text" name="description" />
+      </p>
+      <p>
+        <label></label><input type="submit"  />
+      </p>
+    </form>
+</body>
+</html>
+}
+  <br>
+  @board(stories)

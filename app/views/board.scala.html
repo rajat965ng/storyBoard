@@ -1,0 +1,14 @@
+@import controllers.StoryModel.StoryData
+@(stories:List[StoryData])
+
+@main("Stories !!"){
+  <br>
+  <table>
+    @for(s <- stories){
+    <tr>
+      <td>@s.title</td><td>@s.description</td>
+    </tr>
+    }
+  </table>
+
+}
